@@ -748,6 +748,17 @@ nav .nav-links a:focus {
   border-radius: 6px;
   transition: transform 0.2s, box-shadow 0.2s;
 }
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.marquee-content {
+  display: flex;
+  animation: marquee 30s linear infinite;
+}
 
 .certification:hover,
 .certification:focus {
@@ -997,6 +1008,19 @@ footer .social-links a:focus {
   .iframe-container {
     padding-bottom: 100%;
   }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee:hover .marquee-content {
+  animation-play-state: paused;
 }
 
 @media (max-width: 480px) {
